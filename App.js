@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Inputs from './inputs';
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1}}>
+    <View style={{flex: 1}}>
       <Inputs/>
-      <Button
+      <Button style={styles.button}
         title="Go to Details"
         onPress={() => navigation.navigate('Details')}
       />
@@ -42,3 +42,17 @@ function App() {
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  button:{
+    paddingHorizontal: 20,
+    paddingVertical: 6,
+    gap: 10,
+    alignItems: 'center',
+    color: '#B5C1FF',
+    border: 0.5,
+    position: 'absolute',
+
+  },
+
+})
