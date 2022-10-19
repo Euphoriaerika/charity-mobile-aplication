@@ -5,11 +5,11 @@ export default function Footer() {
   const goToForm = () => console.log('Button pressed futer')
     return (
         <View style={styles.container_futer}>
-        <View style={styles.left}> 
-            <Text>Якщо ви волонтер або просто бажаєте допомогти:</Text>
+        <View style={styles.cont_col}> 
+          <Text>Якщо ви волонтер{"\n"}або просто бажаєте{"\n"}допомогти:</Text>
         </View>
-        <View style={styles.right}> 
-            <FuterBotom text_button="Забронювати" onPress={goToForm} />
+        <View style={styles.cont_col}> 
+            <FuterBotom text_button="Допомогти" onPress={goToForm} />
         </View>
         </View>
   );
@@ -18,14 +18,14 @@ export default function Footer() {
 const styles = StyleSheet.create({
     container_futer: {
         backgroundColor: "#CDFCF6",
-        height: 72,
+        height: 96,
         flexDirection: 'row',
 
   },
-    left: {
-      marginRight: 'auto',
-  },
-    right: {
+    cont_col: {
+      justifyContent: 'center',
       marginLeft: 'auto',
+      marginRight: 'auto',
+      
     },
 });

@@ -15,11 +15,12 @@ export default function FuterBotom({ text_button, onPress }) {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: "#fff",
-        marginTop: 20,
-        borderBottomLeftRadius: 8,
-        height: 55,
-        paddingVertical: 10
+        backgroundColor: "#B5C1FF",
+
+        height: 50,
+        borderRadius: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 12,
     },
     text_b: {
         textAlign: 'center',
