@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, SafeAreaView, ScrollView, Text, View } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  View,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -30,7 +36,7 @@ export default function App() {
         <Header text={"Рейси"} />
         <ScrollView>
           {loading ? (
-            <Text>Loading...</Text>
+            <View></View>
           ) : (
             data.map((post) => (
               <View>
