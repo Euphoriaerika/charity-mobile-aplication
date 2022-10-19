@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, SafeAreaView, TextInput, StyleSheet } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient';
 
 class Inputs extends Component {
    state = {
@@ -18,68 +17,46 @@ class Inputs extends Component {
    }
    render() {
       return (
-         // <SafeAreaView style={styles.container}>
-      // <LinearGradient
-      //   style={styles.container}
-      //   colors={["#F2F491", "#8B93DF"]}
-      //   start={{ x: 0, y: 1 }}
-      //   end={{ x: 0, y: 0 }}
-      //   //locations={[0.1, 0.3]}
-      // >
          <View style = {styles.inputcontainer}>
             <Text style={styles.Header}>Я волонтер</Text>
             <Text style={styles.inputtext}>ПІБ:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-            //    placeholder = "Email"
-            //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handleEmail}/>
             <Text style={styles.inputtext}>Номер телефону:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-            //    placeholder = "Password"
-            //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
 
             <Text style={styles.inputtext}>Адреса відправлення:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-            //    placeholder = "Password"
-            //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
 
             <Text style={styles.inputtext}>Адреса прибуття:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-            //    placeholder = "Password"
-            //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
 
             <Text style={styles.inputtext}>Дата і час відправлення:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-            //    placeholder = "Password"
-            //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
 
             <Text style={styles.inputtext}>Кількість місць в авто:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-            //    placeholder = "Password"
-            //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
 
             <Text style={styles.inputtext}>Опис авто:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-            //    placeholder = "Password"
-            //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
          
@@ -91,10 +68,6 @@ class Inputs extends Component {
                <Text style = {styles.submitButtonText}> Надіслати </Text>
             </TouchableOpacity>
             </View> 
-         
-         
-       //</LinearGradient>
-   //  </SafeAreaView>
       )
    }
 }
@@ -102,12 +75,7 @@ export default Inputs
 
 const styles = StyleSheet.create({
    container: {
-    position: "absolute",
-   //  top: 0,
-   //  left: 0,
-   //  right: 0,
-   //  bottom: 0,
-   
+   position: "absolute",
    position: 'relative',
     zIndex: -1
     },
