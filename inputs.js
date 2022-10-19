@@ -18,14 +18,14 @@ class Inputs extends Component {
    }
    render() {
       return (
-         <SafeAreaView style={styles.container}>
-      <LinearGradient
-        style={styles.container}
-        colors={["#F2F491", "#8B93DF"]}
-        start={{ x: 0, y: 1 }}
-        end={{ x: 0, y: 0 }}
-        //locations={[0.1, 0.3]}
-      >
+         // <SafeAreaView style={styles.container}>
+      // <LinearGradient
+      //   style={styles.container}
+      //   colors={["#F2F491", "#8B93DF"]}
+      //   start={{ x: 0, y: 1 }}
+      //   end={{ x: 0, y: 0 }}
+      //   //locations={[0.1, 0.3]}
+      // >
          <View style = {styles.inputcontainer}>
             <Text style={styles.Header}>Я волонтер</Text>
             <Text style={styles.inputtext}>ПІБ:</Text>
@@ -82,18 +82,19 @@ class Inputs extends Component {
             //    placeholderTextColor = "#2D2C34"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
-            
+         
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
                   () => this.login(this.state.email, this.state.password)
                }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
+               <Text style = {styles.submitButtonText}> Надіслати </Text>
             </TouchableOpacity>
-         </View>
+            </View> 
          
-       </LinearGradient>
-    </SafeAreaView>
+         
+       //</LinearGradient>
+   //  </SafeAreaView>
       )
    }
 }
@@ -102,10 +103,12 @@ export default Inputs
 const styles = StyleSheet.create({
    container: {
     position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: -200,
+   //  top: 0,
+   //  left: 0,
+   //  right: 0,
+   //  bottom: 0,
+   
+   position: 'relative',
     zIndex: -1
     },
     inputtext: {
@@ -130,13 +133,24 @@ const styles = StyleSheet.create({
       lineHeight: 62,
    },
    submitButton: {
-      backgroundColor: '#2D2C34',
-      padding: 10,
-      margin: 15,
-      height: 40,
+      backgroundColor: '#B5C1FF',
+      width: 162,
+      height: 52,
+
    },
    submitButtonText:{
-      color: 'white'
+      flex: 'none',
+      height: 29,
+      width: 133,
+      color: '#2D2C34',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: 24,
+      alignItems: 'center',
+      lineHeight: 29,
+      textAlign: 'center',
+      
    },
    Header:{
     color: '#1B1D1F',
