@@ -21,7 +21,7 @@ class Inputs extends Component {
    render() {
       return (
          <View style = {styles.inputcontainer}>
-            <Text style={styles.Header}>Я волонтер</Text>
+            <Text style={styles.Header}>Я біженець</Text>
             <Text style={styles.inputtext}>ПІБ:</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
@@ -39,32 +39,9 @@ class Inputs extends Component {
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
 
-            <Text style={styles.inputtext}>Адреса прибуття:</Text>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               autoCapitalize = "none"
-               onChangeText = {this.handlePassword}/>
-
-            <Text style={styles.inputtext}>Дата і час відправлення:</Text>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               autoCapitalize = "none"
-               onChangeText = {this.handlePassword}/>
-
-            <Text style={styles.inputtext}>Кількість місць в авто:</Text>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               autoCapitalize = "none"
-               onChangeText = {this.handlePassword}/>
-
-            <Text style={styles.inputtext}>Опис авто:</Text>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               autoCapitalize = "none"
-               onChangeText = {this.handlePassword}/>
-
+            
          <View style={styles.cont_col}> 
-            <ButtonSubmit text_button="Допомогти" onPress={() => navigation.navigate('Details')} />
+            <ButtonSubmit text_button="Допомогти" onPress={() => navigation.navigate('Home')} />
         </View>
          
             {/* <TouchableOpacity

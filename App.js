@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { LinearGradient } from 'expo-linear-gradient';
 import Inputs from './inputs';
+import Inputs_esc from './inputs_esc';
+// import ButtonSubmit from './Submit.js';
 
 function HomeScreen({ navigation }) {
   return (
@@ -14,15 +16,12 @@ function HomeScreen({ navigation }) {
         end={{ x: 0, y: 0 }}
         //locations={[0.1, 0.3]}
       >
-    <View style={{flex: 1}}>
-      
-      <Button style={styles.button}
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-       <Inputs/>
-    </View>
-  
+        <View style={{flex: 1}}>
+            <Inputs/>
+        </View>
+        {/* <View style={styles.cont_col}> 
+            <ButtonSubmit text_button="Допомогти" onPress={() => navigation.navigate('Details')} />
+        </View> */}
     </LinearGradient>
   );
 }
@@ -31,9 +30,10 @@ function DetailsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
+      <Inputs_esc/>
       <Button
-        title="Go to Details... again"
-        onPress={() => navigation.push('Details')}
+        title="Go to Home"
+        onPress={() => navigation.push('Home')}
       />
     </View>
   );
@@ -55,6 +55,19 @@ function App() {
 export default App;
 
 const styles = StyleSheet.create({
+  container_futer: {
+    backgroundColor: "#CDFCF6",
+    height: 96,
+    flexDirection: 'row',
+
+},
+cont_col: {
+  justifyContent: 'center',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  
+},
+
   container: {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -76,15 +89,6 @@ const styles = StyleSheet.create({
     height: 52,
     //left: calc(50% - 162px/2 + 0.5px),
     bottom: 82,
-
-    /* Blue */
-
-    //background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), #B5C1FF,
-    /* Black */
-
-    //border: 0.5px solid #2D2C34;,
-    //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-    //border-radius: 8,
 
   },
 
