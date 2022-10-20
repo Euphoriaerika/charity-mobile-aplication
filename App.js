@@ -42,6 +42,8 @@ function DetailsScreen({ navigation }) {
 const Stack = createNativeStackNavigator();
 
 function App() {
+  const url = "https://charity-mobile-aplication.herokuapp.com/volounteers";
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
