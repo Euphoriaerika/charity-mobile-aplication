@@ -5,36 +5,36 @@ import {
   TextInput,
   StyleSheet,
   ScrollView,
-  Button,
   TouchableOpacity,
 } from "react-native";
 
 export default class FormCol extends Component {
-constructor(props) {
+  constructor(props) {
     super(props);
     this._fetchEsc = this._fetchEsc.bind(this);
 
     this.state = {
-      fio: '',
-      telephoneNumber: '',
-      bookedPlaces: '',
-    }
+      fio: "",
+      telephoneNumber: "",
+      bookedPlaces: "",
+    };
   }
 
-  async _fetchEsc(){
+  async _fetchEsc() {
     try {
       let formData = new FormData();
-    formData.append('FIO', this.state.fio);
-    formData.append('TelephoneNumber', this.state.telephoneNumber);
-    formData.append('BookedPlaces', this.state.arrivalLocation);
+      formData.append("FIO", this.state.fio);
+      formData.append("TelephoneNumber", this.state.telephoneNumber);
+      formData.append("BookedPlaces", this.state.bookedPlaces);
 
-    const res = await fetch('https://charity-mobile-aplication.herokuapp.com/escaper/Create', {
-        method: 'POST',
-        body: formData
-    });
-
-    const data = await res.json();}
-    catch(err) {
+      const res = await fetch(
+        "https://charity-mobile-aplication.herokuapp.com/escaper/Create",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+    } catch (err) {
       console.log(err);
     }
   }
@@ -49,7 +49,7 @@ constructor(props) {
               style={styles.input}
               underlineColorAndroid="transparent"
               autoCapitalize="none"
-              onChangeText={(text) => this.setState({fio:text})}
+              onChangeText={(text) => this.setState({ fio: text })}
             />
           </View>
 
@@ -59,7 +59,7 @@ constructor(props) {
               style={styles.input}
               underlineColorAndroid="transparent"
               autoCapitalize="none"
-              onChangeText={(text) => this.setState({telephoneNumber:text})}
+              onChangeText={(text) => this.setState({ telephoneNumber: text })}
             />
           </View>
 
@@ -69,15 +69,14 @@ constructor(props) {
               style={styles.input}
               underlineColorAndroid="transparent"
               autoCapitalize="none"
-              onChangeText={(text) => this.setState({bookedPlaces:text})}
+              onChangeText={(text) => this.setState({ bookedPlaces: text })}
             />
           </View>
-          <TouchableHighlight
-            onPress={this._fetchEsc}>
-            <Text>
-              Надіслати
-            </Text>
-          </TouchableHighlight>
+          <TouchableOpacity onPress={this._fetchEsc}>
+            <View style={styles.button}>
+              <Text style={styles.text_b}>Надіслати</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     );
@@ -106,5 +105,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     height: 36,
   },
-  fr: {},
+  button: {
+    backgroundColor: "#D3F2F0",
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+    height: 55,
+    paddingVertical: 10,
+  },
+  text_b: {
+    textAlign: "center",
+    color: "#1B1D1F",
+    fontSize: 24,
+  },
 });
