@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
-export default function FuterBotom({ text_button, onPress }) {
+export default function FuterBotom({ text_button }) {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => onPress.navigate("FormVol")}>
+    <TouchableOpacity onPress={() => navigation.navigate("FormVol")}>
       <View style={styles.button}>
         <Text style={styles.text_b}>{text_button}</Text>
       </View>

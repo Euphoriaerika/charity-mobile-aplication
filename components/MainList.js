@@ -35,12 +35,12 @@ export default function MainList({ navigation }) {
           ) : (
             data.map((post) => (
               <View>
-                <ListJourney el={post} pressiing={navigation} />
+                <ListJourney el={post} />
               </View>
             ))
           )}
         </ScrollView>
-        <Footer pressiing={navigation} />
+        <Footer />
       </LinearGradient>
       <StatusBar style="auto" />
     </SafeAreaView>

@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
 export default function ListButton({ text_button, onPress }) {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => onPress.navigate("FormEsc")}>
+    <TouchableOpacity onPress={() => navigation.navigate("FormEsc")}>
       <View style={styles.button}>
         <Text style={styles.text_b}>{text_button}</Text>
       </View>

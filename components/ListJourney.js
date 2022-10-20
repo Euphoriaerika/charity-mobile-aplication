@@ -25,7 +25,7 @@ export default function ListJourney({ el, pressiing }) {
         <Text style={styles.text_title}>{el.TelephoneNumber}</Text>
         <Text style={styles.text_discr}>{el.FIO}</Text>
       </View>
-      <ListButton text_button="Забронювати" onPress={pressiing} />
+      <ListButton text_button="Забронювати" />
     </View>
   );
 }

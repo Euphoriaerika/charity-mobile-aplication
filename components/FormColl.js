@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  ScrollView,
+  Button,
+} from "react-native";
 
 export default class FormCol extends Component {
   handlefio = (text) => {

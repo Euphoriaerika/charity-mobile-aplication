@@ -16,11 +16,6 @@ export default function FormEsc({ navigation }) {
       >
         <Header text={"Я біженеець"} />
         <FormColl />
-        <Button
-          style={styles.button}
-          title="Go to Home"
-          onPress={() => navigation.navigate("MainList")}
-        />
       </LinearGradient>
       <StatusBar style="auto" />
     </SafeAreaView>

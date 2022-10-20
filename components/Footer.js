@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import FuterBotom from "./FuterBotom";
 
-export default function Footer({ pressiing }) {
+export default function Footer() {
   return (
     <View style={styles.container_futer}>
       <View style={styles.cont_col}>
@@ -10,7 +10,7 @@ export default function Footer({ pressiing }) {
         </Text>
       </View>
       <View style={styles.cont_col}>
-        <FuterBotom text_button="Допомогти" onPress={pressiing} />
+        <FuterBotom text_button="Допомогти" />
       </View>
     </View>
   );
