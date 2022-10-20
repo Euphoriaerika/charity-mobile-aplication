@@ -3,9 +3,9 @@ import { StyleSheet, Button, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
 import Header from "./Header";
-import FormCol from "./FormCol";
+import FormColl from "./FormColl";
 
-export default function FormVol({ navigation }) {
+export default function FormEsc({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
@@ -14,8 +14,8 @@ export default function FormVol({ navigation }) {
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: 0 }}
       >
-        <Header text={"Я волонтер"} />
-        <FormCol />
+        <Header text={"Я біженеець"} />
+        <FormColl />
         <Button
           style={styles.button}
           title="Go to Home"

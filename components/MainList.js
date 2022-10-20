@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  View,
-  Button,
-} from "react-native";
+import { StyleSheet, SafeAreaView, ScrollView, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Header from "./Header";
 import Footer from "./Footer";

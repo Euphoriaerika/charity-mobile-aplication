@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
 export default function ListButton({ text_button, onPress }) {
   return (
-    <TouchableOpacity onPress={() => onPress.navigate("FormVol")}>
+    <TouchableOpacity onPress={() => onPress.navigate("FormEsc")}>
       <View style={styles.button}>
         <Text style={styles.text_b}>{text_button}</Text>
       </View>
