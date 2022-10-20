@@ -6,18 +6,38 @@ import {
   StyleSheet,
   ScrollView,
   Button,
+  TouchableOpacity,
 } from "react-native";
 
 export default class FormCol extends Component {
-  handlefio = (text) => {
-    this.setState({ fio: text });
-  };
-  handletelephoneNumber = (text) => {
-    this.setState({ telephoneNumber: text });
-  };
-  handcount = (text) => {
-    this.setState({ count: text });
-  };
+constructor(props) {
+    super(props);
+    this._fetchEsc = this._fetchEsc.bind(this);
+
+    this.state = {
+      fio: '',
+      telephoneNumber: '',
+      bookedPlaces: '',
+    }
+  }
+
+  async _fetchEsc(){
+    try {
+      let formData = new FormData();
+    formData.append('FIO', this.state.fio);
+    formData.append('TelephoneNumber', this.state.telephoneNumber);
+    formData.append('BookedPlaces', this.state.arrivalLocation);
+
+    const res = await fetch('https://charity-mobile-aplication.herokuapp.com/escaper/Create', {
+        method: 'POST',
+        body: formData
+    });
+
+    const data = await res.json();}
+    catch(err) {
+      console.log(err);
+    }
+  }
 
   render() {
     return (
@@ -29,7 +49,7 @@ export default class FormCol extends Component {
               style={styles.input}
               underlineColorAndroid="transparent"
               autoCapitalize="none"
-              onChangeText={this.handlefio}
+              onChangeText={(text) => this.setState({fio:text})}
             />
           </View>
 
@@ -39,7 +59,7 @@ export default class FormCol extends Component {
               style={styles.input}
               underlineColorAndroid="transparent"
               autoCapitalize="none"
-              onChangeText={this.handletelephoneNumber}
+              onChangeText={(text) => this.setState({telephoneNumber:text})}
             />
           </View>
 
@@ -49,9 +69,15 @@ export default class FormCol extends Component {
               style={styles.input}
               underlineColorAndroid="transparent"
               autoCapitalize="none"
-              onChangeText={this.handcount}
+              onChangeText={(text) => this.setState({bookedPlaces:text})}
             />
           </View>
+          <TouchableHighlight
+            onPress={this._fetchEsc}>
+            <Text>
+              Надіслати
+            </Text>
+          </TouchableHighlight>
         </View>
       </ScrollView>
     );
