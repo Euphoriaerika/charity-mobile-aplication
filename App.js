@@ -1,64 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  View,
-} from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ListJourney from "./components/ListJourney";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import MainList from "./components/MainList";
+import FormVol from "./components/FormVol";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [data, setData] = useState([]);
-  const [loading, setloading] = useState(true);
-
-  const url = "https://charity-mobile-aplication.herokuapp.com/volounteers";
-
-  useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error(error))
-      .finally(() => setloading(false));
-  }, []);
   return (
-    <SafeAreaView style={styles.container}>
-      <LinearGradient
-        style={styles.container_main}
-        colors={["#777CE3", "#49EDBC", "#00FFF0"]}
-        start={{ x: 0.1, y: 0.6 }}
-        end={{ x: 0.9, y: 0.4 }}
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="MainList"
+        screenOptions={{ headerShown: false }}
       >
-        <Header text={"Рейси"} />
-        <ScrollView>
-          {loading ? (
-            <View></View>
-          ) : (
-            data.map((post) => (
-              <View>
-                <ListJourney el={post} />
-              </View>
-            ))
-          )}
-        </ScrollView>
-
-        <Footer />
-      </LinearGradient>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+        <Stack.Screen name="MainList" component={MainList} />
+        <Stack.Screen name="FormVol" component={FormVol} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-
-  container_main: {
-    flex: 1,
-  },
-});

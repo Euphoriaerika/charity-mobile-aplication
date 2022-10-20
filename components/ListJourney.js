@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import ListButton from "./ListBotom";
 
-export default function ListJourney({ el }) {
-  const goToForm = () => console.log("Button pressed");
-
+export default function ListJourney({ el, pressiing }) {
   return (
     <View style={styles.container_line}>
       <View style={styles.info}>
@@ -27,7 +25,7 @@ export default function ListJourney({ el }) {
         <Text style={styles.text_title}>{el.TelephoneNumber}</Text>
         <Text style={styles.text_discr}>{el.FIO}</Text>
       </View>
-      <ListButton text_button="Забронювати" onPress={goToForm} />
+      <ListButton text_button="Забронювати" onPress={pressiing} />
     </View>
   );
 }
