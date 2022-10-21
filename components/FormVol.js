@@ -16,11 +16,6 @@ export default function FormVol({ navigation }) {
       >
         <Header text={"Я волонтер"} />
         <FormCol />
-        <Button
-          style={styles.button}
-          title="Go to Home"
-          onPress={() => navigation.navigate("MainList")}
-        />
       </LinearGradient>
       <StatusBar style="auto" />
     </SafeAreaView>
