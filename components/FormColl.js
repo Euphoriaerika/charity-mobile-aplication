@@ -106,11 +106,12 @@ const styles = StyleSheet.create({
     height: 36,
   },
   button: {
-    backgroundColor: "#D3F2F0",
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
-    height: 55,
-    paddingVertical: 10,
+    backgroundColor: "#B5C1FF",
+
+    height: 50,
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
   },
   text_b: {
     textAlign: "center",
